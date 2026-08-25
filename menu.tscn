@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c5n6m73eaw0kq"]
+
+[ext_resource type="Script" uid="uid://bca1alfih3y4u" path="res://Scripts/menu.gd" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://d1xbrjr5vj0es" path="res://Recurso/assetpack/assetpack/parallax/skies/Sky_sky.png" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://b01i75q3knmjv" path="res://Recurso/assetpack/assetpack/Diary Story.otf" id="2_mae5d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2cjb"]
+texture = ExtResource("1_ouk20")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61ko8"]
+bg_color = Color(0.08411708, 0.44696915, 0.7445181, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 29
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 20.0
+expand_margin_bottom = 30.0
+shadow_size = 22
+shadow_offset = Vector2(9, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.2839135, 0.63284373, 0.96047574, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 29
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 20.0
+expand_margin_bottom = 30.0
+shadow_size = 22
+shadow_offset = Vector2(9, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+bg_color = Color(0.071729325, 0.42329022, 0.7086483, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 29
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 20.0
+expand_margin_bottom = 30.0
+shadow_size = 22
+shadow_offset = Vector2(9, 5)
+
+[node name="Menu" type="Control" unique_id=188159080]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mae5d")
+
+[node name="Fundo" type="Panel" parent="." unique_id=1337673823]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 1003.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_t2cjb")
+
+[node name="Titulo" type="Label" parent="." unique_id=177979343]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.0
+offset_top = 55.0
+offset_right = 383.0
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0.15686275, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 150
+text = "jogo de dar tiro"
+
+[node name="Botoes" type="VBoxContainer" parent="." unique_id=1538256129]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 314.0
+offset_right = 820.0
+offset_bottom = 629.0
+theme_override_constants/separation = 106
+
+[node name="Jogar" type="Button" parent="Botoes" unique_id=1889020930]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_61ko8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ytr4m")
+text = "Jogar
+"
+
+[node name="Sair" type="Button" parent="Botoes" unique_id=987616032]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_61ko8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ytr4m")
+text = "Sair
+"
+
+[connection signal="pressed" from="Botoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
